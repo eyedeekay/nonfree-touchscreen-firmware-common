@@ -3,7 +3,7 @@
 SOURCEBINPATH=.
 FWFOLDER=fw
 SOURCEDOC=README.md
-DEBFOLDER=hidblock
+DEBFOLDER=nonfree-touchscreen-firmware-common
 DEBVERSION=$(date +%Y%m%d)
 
 if [ -n "$BASH_VERSION" ]; then
@@ -35,8 +35,9 @@ mv debian/rules.new debian/rules
 # debian/install must contain the list of scripts to install
 # as well as the target directory
 echo $SOURCEDOC usr/share/doc/$DEBFOLDER >> debian/install
-for file in $(find $FWFOLDER -name *.fw); do
-        echo $file usr/bin > debian/install
+for file in $(find . -name *.fw); do
+        echo $file lib/firmware > debian/install
+        echo $file lib/firmware > debian/source/include-binaries
 done
 
 # Remove the example files
