@@ -2,4 +2,4 @@ nonfree-touchscreen-firmware-common (20170407-1) unstable; urgency=medium
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 
- -- lair repo key <problemsolver@openmailbox.org>  Fri, 07 Apr 2017 09:32:26 -0400
+ -- lair repo key <problemsolver@openmailbox.org>  Fri, 07 Apr 2017 09:32:56 -0400
