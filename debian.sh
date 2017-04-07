@@ -45,4 +45,4 @@ rm debian/*.ex
 
 # Build the package.
 # You  will get a lot of warnings and ../somescripts_0.1-1_i386.deb
-debuild -us -uc > ../log
+debuild -us -uc
