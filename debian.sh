@@ -35,14 +35,15 @@ mv debian/rules.new debian/rules
 # debian/install must contain the list of scripts to install
 # as well as the target directory
 echo $SOURCEDOC usr/share/doc/$DEBFOLDER >> debian/install
+
 for file in $(find . -name *.fw); do
-        echo $file lib/firmware > debian/install
-        echo $file lib/firmware > debian/source/include-binaries
+        echo $file lib/firmware | tee -a debian/install
+        echo $file | sed 's|./||'| tee -a debian/source/include-binaries
 done
 
 # Remove the example files
 rm debian/*.ex
-
+dpkg-source --commit
 # Build the package.
 # You  will get a lot of warnings and ../somescripts_0.1-1_i386.deb
 debuild -us -uc
