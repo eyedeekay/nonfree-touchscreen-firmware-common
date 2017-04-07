@@ -3,7 +3,7 @@ DATE = `date +'%Y%m%d'`
 dummy:
 	echo "true"
 
-clean:
+debclean:
 	rm ../nonfree-touchscreen-firmware-common_$(DATE)*.*; \
 	rm -rf ../nonfree-touchscreen-firmware-common-$(DATE)
 
