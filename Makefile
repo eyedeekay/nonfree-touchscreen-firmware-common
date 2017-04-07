@@ -8,5 +8,6 @@ debclean:
 	rm -rf ../nonfree-touchscreen-firmware-common-$(DATE)
 
 deb-pkg:
+	make debclean
 	./debian.sh
 
