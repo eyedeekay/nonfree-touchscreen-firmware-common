@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Prepare') {
             steps {
-                echo 'Building..'
-                sh 'make clean'
+                echo 'Cleaning....'
+                sh 'make debclean'
             }
         }
         stage('Deploy') {
