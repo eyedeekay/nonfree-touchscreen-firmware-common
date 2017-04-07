@@ -21,6 +21,7 @@ DEBFOLDERNAME="$TOME/../$DEBFOLDER-$DEBVERSION"
 # Copy your script to the source dir
 cp $TOME $DEBFOLDERNAME -R
 cd $DEBFOLDERNAME
+#cp $(find $DEBFOLDERNAME -name README.md) $(find $DEBFOLDERNAME -name tmp)
 
 # Create the packaging skeleton (debian/*)
 dh_make --indep --createorig
@@ -41,8 +42,8 @@ done
 
 # Remove the example files
 rm debian/*.ex
+git add . ; git commit -am "$DEV_MESSAGE"; \git push
 dpkg-source --commit
-git add . && git commit -am "$DEV_MESSAGE" ; git push github master
 # Build the package.
 # You  will get a lot of warnings and ../somescripts_0.1-1_i386.deb
 debuild -us -uc
