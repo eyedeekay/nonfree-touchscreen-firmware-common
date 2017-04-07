@@ -9,4 +9,4 @@ clean:
 
 deb-pkg:
 	./debian.sh
-	rm -rf ../nonfree-touchscreen-firmware-common-*
+

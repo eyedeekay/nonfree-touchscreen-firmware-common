@@ -13,12 +13,10 @@ else
 fi
 cd $TOME
 
-git pull origin master
-
 DEBFOLDERNAME="$TOME/../$DEBFOLDER-$DEBVERSION"
 
 # Create your scripts source dir
-mkdir $DEBFOLDERNAME
+#mkdir $DEBFOLDERNAME
 
 # Copy your script to the source dir
 cp $TOME $DEBFOLDERNAME -R
@@ -44,6 +42,7 @@ done
 # Remove the example files
 rm debian/*.ex
 dpkg-source --commit
+git add . && git commit -am "$DEV_MESSAGE" ; git push github master
 # Build the package.
 # You  will get a lot of warnings and ../somescripts_0.1-1_i386.deb
 debuild -us -uc
