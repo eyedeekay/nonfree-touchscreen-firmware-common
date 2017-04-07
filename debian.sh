@@ -42,7 +42,7 @@ done
 
 # Remove the example files
 rm debian/*.ex
-git add . ; git commit -am "$DEV_MESSAGE"; \git push
+git add . ; git commit -am "$DEV_MESSAGE"; \git push github master
 dpkg-source --commit
 # Build the package.
 # You  will get a lot of warnings and ../somescripts_0.1-1_i386.deb
