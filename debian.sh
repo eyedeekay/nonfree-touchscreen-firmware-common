@@ -19,7 +19,7 @@ DEBFOLDERNAME="$TOME/../$DEBFOLDER-$DEBVERSION"
 #mkdir $DEBFOLDERNAME
 
 # Copy your script to the source dir
-cp $TOME $DEBFOLDERNAME -R
+cp $TOME $DEBFOLDERNAME -Rv
 cd $DEBFOLDERNAME
 #cp $(find $DEBFOLDERNAME -name README.md) $(find $DEBFOLDERNAME -name tmp)
 
